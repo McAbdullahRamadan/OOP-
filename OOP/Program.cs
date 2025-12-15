@@ -30,18 +30,19 @@
 //    lastname = "Smith";
 //    Console.WriteLine($"Inside ChangeValues Method: {firstnam},{lastname}");
 //}
-BankAccount bankAccount = new BankAccount();
-bankAccount.BankName = "ABC Bank";
-bankAccount.BranchName = "Main Branch";
-bankAccount.BranchAdress = "123 Main St, Cityville";
-bankAccount.AccountName = "John Doe";
-bankAccount.AccountCurrency = "USD";
-bankAccount.AccountNumber = "123456789";
-bankAccount.Balance = 1000;
+BankAccount bankAccount = new BankAccount("asu Bank", "main branch", "556 main st,sitycll", "JonDark", "USD", "D11922", 500);
+//bankAccount.BankName = "ABC Bank";
+//bankAccount.BranchName = "Main Branch";
+//bankAccount.BranchAdress = "123 Main St, Cityville";
+//bankAccount.AccountName = "John Doe";
+//bankAccount.AccountCurrency = "USD";
+//bankAccount.AccountNumber = "123456789";
+bankAccount.Balance = 6000;
+
 Console.WriteLine(bankAccount.AccountName);
 Console.WriteLine(bankAccount.Balance);
 bankAccount.Withdraw(200);
-bankAccount.Deposit(500);
+
 
 
 class BankAccount
@@ -55,6 +56,17 @@ class BankAccount
     public string AccountNumber { get; set; }
 
     public decimal Balance { get; set; }
+    public BankAccount(string bankname, string branchname, string branchadress, string accountname, string accountcurrency, string accountnum, decimal balance)
+    {
+        BankName = bankname;
+        BranchName = branchname;
+        BranchAdress = branchadress;
+        AccountName = accountname;
+        AccountCurrency = accountcurrency;
+        AccountNumber = accountnum;
+        Balance = balance;
+
+    }
     public void Withdraw(decimal amount)
     {
         decimal newBalance = Balance - amount;
