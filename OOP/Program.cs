@@ -30,75 +30,75 @@
 //    lastname = "Smith";
 //    Console.WriteLine($"Inside ChangeValues Method: {firstnam},{lastname}");
 //}
-BankAccount bankAccount = new BankAccount("asu Bank", "main branch", "556 main st,sitycll", "JonDark", "USD", "D11922", 500);
+//BankAccount bankAccount = new BankAccount("asu Bank", "main branch", "556 main st,sitycll", "JonDark", "USD", "D11922", 500);
 //bankAccount.BankName = "ABC Bank";
 //bankAccount.BranchName = "Main Branch";
 //bankAccount.BranchAdress = "123 Main St, Cityville";
 //bankAccount.AccountName = "John Doe";
 //bankAccount.AccountCurrency = "USD";
 //bankAccount.AccountNumber = "123456789";
-bankAccount.Balance = 6000;
+//bankAccount.Balance = 6000;
 
-Console.WriteLine(bankAccount.AccountName);
-Console.WriteLine(bankAccount.Balance);
-bankAccount.Withdraw(200);
+//Console.WriteLine(bankAccount.AccountName);
+//Console.WriteLine(bankAccount.Balance);
+//bankAccount.Withdraw(200);
 
 
 
-class BankAccount
-{
-    public string BankName { get; set; }
-    public string BranchName { get; set; }
-    public string BranchAdress { get; set; }
-    public string AccountName { get; set; }
-    public string AccountCurrency { get; set; }
+//class BankAccount
+//{
+//    public string BankName { get; set; }
+//    public string BranchName { get; set; }
+//    public string BranchAdress { get; set; }
+//    public string AccountName { get; set; }
+//    public string AccountCurrency { get; set; }
 
-    public string AccountNumber { get; set; }
+//    public string AccountNumber { get; set; }
 
-    public decimal Balance { get; set; }
-    public BankAccount(string bankname, string branchname, string branchadress, string accountname, string accountcurrency, string accountnum, decimal balance)
-    {
-        BankName = bankname;
-        BranchName = branchname;
-        BranchAdress = branchadress;
-        AccountName = accountname;
-        AccountCurrency = accountcurrency;
-        AccountNumber = accountnum;
-        Balance = balance;
+//    public decimal Balance { get; set; }
+//    public BankAccount(string bankname, string branchname, string branchadress, string accountname, string accountcurrency, string accountnum, decimal balance)
+//    {
+//        BankName = bankname;
+//        BranchName = branchname;
+//        BranchAdress = branchadress;
+//        AccountName = accountname;
+//        AccountCurrency = accountcurrency;
+//        AccountNumber = accountnum;
+//        Balance = balance;
 
-    }
-    public void Withdraw(decimal amount)
-    {
-        decimal newBalance = Balance - amount;
-        if (newBalance < 0)
-        {
-            Console.WriteLine("Insufficient funds for this withdrawal.");
-        }
-        else
-        {
+//    }
+//    public void Withdraw(decimal amount)
+//    {
+//        decimal newBalance = Balance - amount;
+//        if (newBalance < 0)
+//        {
+//            Console.WriteLine("Insufficient funds for this withdrawal.");
+//        }
+//        else
+//        {
 
-            Console.WriteLine($"Withdrew {amount:C}");
-            Console.WriteLine($"your new Balance for {AccountNumber} is {newBalance} ");
-        }
-        Console.WriteLine(DateTime.Now);
-    }
+//            Console.WriteLine($"Withdrew {amount:C}");
+//            Console.WriteLine($"your new Balance for {AccountNumber} is {newBalance} ");
+//        }
+//        Console.WriteLine(DateTime.Now);
+//    }
 
-    public void Deposit(decimal amount)
-    {
-        decimal newBalance = Balance + amount;
-        if (newBalance < 0)
-        {
-            Console.WriteLine("Insufficient funds for this withdrawal.");
-        }
-        else
-        {
+//    public void Deposit(decimal amount)
+//    {
+//        decimal newBalance = Balance + amount;
+//        if (newBalance < 0)
+//        {
+//            Console.WriteLine("Insufficient funds for this withdrawal.");
+//        }
+//        else
+//        {
 
-            Console.WriteLine($"Withdrew {amount:C}");
-            Console.WriteLine($"your new Balance for {AccountNumber} is {newBalance} ");
-        }
-        Console.WriteLine(DateTime.Now);
-    }
-}
+//            Console.WriteLine($"Withdrew {amount:C}");
+//            Console.WriteLine($"your new Balance for {AccountNumber} is {newBalance} ");
+//        }
+//        Console.WriteLine(DateTime.Now);
+//    }
+//}
 
 
 
@@ -152,6 +152,30 @@ class BankAccount
 
 //    return x + y + r;
 //}
+
+
+// Factorial Calculator Recursive Methods
+//Non Recursive Method
+
+int number = 10;
+Console.WriteLine("Non Recursive way");
+Console.WriteLine(FactorialNonRecursine(number));
+
+static int FactorialNonRecursine(int num)
+{
+    if (num == 0)
+
+        return 1;
+    int result = 1;
+
+    for (int i = num; i > 0; i--)
+    {
+        result = result * i;
+        Console.WriteLine(i);
+    }
+    return result;
+}
+Console.ReadLine();
 
 
 
