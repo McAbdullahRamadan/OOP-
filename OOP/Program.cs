@@ -157,50 +157,83 @@
 // Factorial Calculator Recursive Methods
 //Non Recursive Method
 
-int number = 10;
-Console.WriteLine("Non Recursive way");
-Console.WriteLine(FactorialNonRecursine(number));
+//int number = 10;
+//Console.WriteLine("Non Recursive way");
+//Console.WriteLine(FactorialNonRecursine(number));
 
-static int FactorialNonRecursine(int num)
+//static int FactorialNonRecursine(int num)
+//{
+//    if (num == 0)
+
+//        return 1;
+//    int result = 1;
+
+//    for (int i = num; i > 0; i--)
+//    {
+//        result *= i;
+//        Console.WriteLine(i);
+//    }
+//    return result;
+//}
+//Console.ReadLine();
+
+//// Recursive Method
+//Console.WriteLine("Recursive way");
+//Console.WriteLine(FactorialRecursive(number));
+//static int FactorialRecursive(int num)
+//{
+//    if (num == 0)
+//        return 1;
+//    else
+//        return num * FactorialRecursive(num - 1);
+//}
+//string path = string.Empty;
+//path = @"D:\InterView-Abdullah\Behaviours"; // Specify your directory path here access folder
+//Console.WriteLine(path);
+//DisplayFolders(path, 0);
+
+
+//static void DisplayFolders(string path, int indent)
+//{
+//    foreach (var folder in Directory.GetDirectories(path))
+//    {
+//        Console.WriteLine($"{new string(' ', indent)} {Path.GetFileName(folder)}");
+//        DisplayFolders(folder, indent + 3);
+//    }
+//}
+
+//Console.ReadLine();
+
+//polymorphism example
+A a = new B();
+a.Show();
+A[] arr = new A[3];
+arr[0] = new A();
+arr[1] = new B();
+arr[2] = new C();
+foreach (var item in arr)
 {
-    if (num == 0)
-
-        return 1;
-    int result = 1;
-
-    for (int i = num; i > 0; i--)
-    {
-        result *= i;
-        Console.WriteLine(i);
-    }
-    return result;
+    item.Show();
 }
 Console.ReadLine();
-
-// Recursive Method
-Console.WriteLine("Recursive way");
-Console.WriteLine(FactorialRecursive(number));
-static int FactorialRecursive(int num)
+class A
 {
-    if (num == 0)
-        return 1;
-    else
-        return num * FactorialRecursive(num - 1);
-}
-string path = string.Empty;
-path = @"D:\InterView-Abdullah\Behaviours"; // Specify your directory path here access folder
-Console.WriteLine(path);
-DisplayFolders(path, 0);
-
-
-static void DisplayFolders(string path, int indent)
-{
-    foreach (var folder in Directory.GetDirectories(path))
+    public virtual void Show()
     {
-        Console.WriteLine($"{new string(' ', indent)} {Path.GetFileName(folder)}");
-        DisplayFolders(folder, indent + 3);
+        Console.WriteLine("Class A Show A");
     }
 }
-
-Console.ReadLine();
-
+class B : A
+{
+    public override void Show()
+    {
+        Console.WriteLine("Class B Show B");
+    }
+}
+class C : A
+{
+    public override void Show()
+    {
+        Console.WriteLine("Class C Show C");
+    }
+}
