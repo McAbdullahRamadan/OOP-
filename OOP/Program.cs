@@ -205,35 +205,55 @@
 //Console.ReadLine();
 
 //polymorphism example
-A a = new B();
-a.Show();
-A[] arr = new A[3];
-arr[0] = new A();
-arr[1] = new B();
-arr[2] = new C();
-foreach (var item in arr)
+//A a = new B();
+//a.Show();
+//A[] arr = new A[3];
+//arr[0] = new A();
+//arr[1] = new B();
+//arr[2] = new C();
+//foreach (A item in arr)
+//{
+//    item.Show();
+//}
+//Console.ReadLine();
+//class A
+//{
+//    public virtual void Show()
+//    {
+//        Console.WriteLine("Class A Show A");
+//    }
+//}
+//class B : A
+//{
+//    public override void Show()
+//    {
+//        Console.WriteLine("Class B Show B");
+//    }
+//}
+//class C : A
+//{
+//    public override void Show()
+//    {
+//        Console.WriteLine("Class C Show C");
+//    }
+//}
+
+//abstract class  example
+SyseemAnimal myDog = new Dog();
+myDog.MakeSound();
+myDog.Sleep();
+abstract class SyseemAnimal
 {
-    item.Show();
-}
-Console.ReadLine();
-class A
-{
-    public virtual void Show()
+    public abstract void MakeSound();
+    public void Sleep()
     {
-        Console.WriteLine("Class A Show A");
+        Console.WriteLine("The animal is sleeping.");
     }
 }
-class B : A
+class Dog : SyseemAnimal
 {
-    public override void Show()
+    public override void MakeSound()
     {
-        Console.WriteLine("Class B Show B");
-    }
-}
-class C : A
-{
-    public override void Show()
-    {
-        Console.WriteLine("Class C Show C");
+        Console.WriteLine("Woof Woof");
     }
 }
