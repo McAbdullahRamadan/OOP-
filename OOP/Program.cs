@@ -187,6 +187,20 @@ static int FactorialRecursive(int num)
     else
         return num * FactorialRecursive(num - 1);
 }
+string path = string.Empty;
+path = @"D:\InterView-Abdullah\Behaviours"; // Specify your directory path here access folder
+Console.WriteLine(path);
+DisplayFolders(path, 0);
 
 
+static void DisplayFolders(string path, int indent)
+{
+    foreach (var folder in Directory.GetDirectories(path))
+    {
+        Console.WriteLine($"{new string(' ', indent)} {Path.GetFileName(folder)}");
+        DisplayFolders(folder, indent + 3);
+    }
+}
+
+Console.ReadLine();
 
