@@ -170,14 +170,23 @@ static int FactorialNonRecursine(int num)
 
     for (int i = num; i > 0; i--)
     {
-        result = result * i;
+        result *= i;
         Console.WriteLine(i);
     }
     return result;
 }
 Console.ReadLine();
 
-
+// Recursive Method
+Console.WriteLine("Recursive way");
+Console.WriteLine(FactorialRecursive(number));
+static int FactorialRecursive(int num)
+{
+    if (num == 0)
+        return 1;
+    else
+        return num * FactorialRecursive(num - 1);
+}
 
 
 
