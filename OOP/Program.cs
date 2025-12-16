@@ -239,21 +239,45 @@
 //}
 
 //abstract class  example
-SyseemAnimal myDog = new Dog();
-myDog.MakeSound();
-myDog.Sleep();
-abstract class SyseemAnimal
+//SyseemAnimal myDog = new Dog();
+//myDog.MakeSound();
+//myDog.Sleep();
+//abstract class SyseemAnimal
+//{
+//    public abstract void MakeSound();
+//    public void Sleep()
+//    {
+//        Console.WriteLine("The animal is sleeping.");
+//    }
+//}
+//class Dog : SyseemAnimal
+//{
+//    public override void MakeSound()
+//    {
+//        Console.WriteLine("Woof Woof");
+//    }
+//}
+
+
+//Static class example
+/* 1. only static members allowed 
+ * 2. cannot be instantiated
+ * 3. sealed by default
+ * 
+ * */
+
+Console.WriteLine(TemperatureConverter.CelsiusToFahrenheit(100));
+Console.WriteLine(TemperatureConverter.FahrenheitToCelsius(90));
+
+public static class TemperatureConverter
 {
-    public abstract void MakeSound();
-    public void Sleep()
+    public static double CelsiusToFahrenheit(double celsius)
     {
-        Console.WriteLine("The animal is sleeping.");
+        return (celsius * 9 / 5) + 32;
     }
-}
-class Dog : SyseemAnimal
-{
-    public override void MakeSound()
+    public static double FahrenheitToCelsius(double fahrenheit)
     {
-        Console.WriteLine("Woof Woof");
+        return (fahrenheit - 32) * 5 / 9;
     }
+
 }
